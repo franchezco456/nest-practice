@@ -1,17 +1,38 @@
-import { Controller, Get } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from "@nestjs/common";
+import { StudentsService } from "./students.service";
 
 
-@Controller({})
+@Controller('/students')
 export class StudentsController {
 
-    @Get('/students')
+    constructor(private StudentSrv : StudentsService) {}
+    @Get()
     getAllStudents(){
-        return {
-            id: "1047396917",
-            name: "franky",
-            lastname: "franco",
-            email: "frankyfranco456@gmail.com",
-            address: "Calle falsa 123"
-        }
+        return this.StudentSrv.getAllStudents();
+    }
+
+    @Get('/:id')
+    getStudent(@Param('id') id : string){
+        return this.StudentSrv.getStudent(parseInt(id));
+    }
+
+    @Post()
+    createStudent(@Body() student : any){
+        return this.StudentSrv.createStudent(student);
+    }
+
+    @Put()
+    updateStudent(){
+        return this.StudentSrv.updateStudent();
+    }
+
+    @Delete()
+    deleteStudent(){
+        return this.StudentSrv.deleteStudent();
+    }
+
+    @Patch()
+    patchStudent(){
+        return this.StudentSrv.patchStudent();
     }
 }
