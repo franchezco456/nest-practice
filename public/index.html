@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Jardín Nocturno</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="#">Jardín Nocturno</a>
+				<nav class="nav">
+					<a href="#features">Características</a>
+					<a href="#galeria">Galería</a>
+					<a href="#contacto">Contacto</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="container hero-inner">
+					<div class="hero-text">
+						<h1>Bienvenido al Jardín Nocturno</h1>
+						<p>Un oasis sereno bajo la luz de la luna — diseño, color y calma para tus sentidos.</p>
+						<div class="hero-cta">
+							<a class="btn primary" href="#galeria">Explorar la galería</a>
+							<a class="btn ghost" href="#features">Ver características</a>
+						</div>
+					</div>
+					<div class="hero-art" aria-hidden="true">
+						<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="g1" x1="0" x2="1">
+									<stop offset="0%" stop-color="#8be9d9" stop-opacity="0.9"/>
+									<stop offset="100%" stop-color="#7a5cff" stop-opacity="0.9"/>
+								</linearGradient>
+							</defs>
+							<circle cx="150" cy="120" r="90" fill="url(#g1)" opacity="0.25"/>
+							<g fill="#fff" opacity="0.9">
+								<path d="M80 210c25-30 60-40 90-30s52 40 60 60-10 20-30 20S110 210 80 210z" opacity="0.9"/>
+								<circle cx="210" cy="80" r="8"/>
+								<circle cx="240" cy="110" r="4"/>
+								<circle cx="60" cy="60" r="3"/>
+							</g>
+						</svg>
+					</div>
+				</div>
+			</section>
+
+			<section id="features" class="features container">
+				<h2 class="section-title">Características</h2>
+				<div class="grid features-grid">
+					<article class="card">
+						<h3>Paleta Calmante</h3>
+						<p>Colores cuidadosamente seleccionados para relajar la vista y resaltar contenido importante.</p>
+					</article>
+					<article class="card">
+						<h3>Diseño Responsivo</h3>
+						<p>Se adapta a móviles, tablets y escritorio con transiciones suaves y jerarquía clara.</p>
+					</article>
+					<article class="card">
+						<h3>Animaciones Sutiles</h3>
+						<p>Efectos leves que añaden vida sin distraer — microinteracciones pensadas.</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="galeria" class="galeria">
+				<div class="container">
+					<h2 class="section-title">Galería Nocturna</h2>
+					<div class="grid gallery-grid">
+						<figure class="tile">
+							<div class="tile-art">🌙</div>
+							<figcaption>Flor de Luna</figcaption>
+						</figure>
+						<figure class="tile">
+							<div class="tile-art">🌿</div>
+							<figcaption>Hoja Plateada</figcaption>
+						</figure>
+						<figure class="tile">
+							<div class="tile-art">✨</div>
+							<figcaption>Polvo de Estrellas</figcaption>
+						</figure>
+						<figure class="tile">
+							<div class="tile-art">🌸</div>
+							<figcaption>Susurro Floral</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<section id="contacto" class="contact container">
+				<h2 class="section-title">Contacto</h2>
+				<p>¿Quieres personalizar este tema o exportarlo? Escríbeme y lo adaptamos a tu proyecto.</p>
+				<form class="contact-form" onsubmit="event.preventDefault(); alert('Formulario de ejemplo — enviar desactivado.');">
+					<input type="email" placeholder="Tu correo" aria-label="correo" required />
+					<button class="btn primary" type="submit">Enviar</button>
+				</form>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<p>© <span id="year"></span> Jardín Nocturno — Diseño de muestra</p>
+				<small>Hecho con cariño y CSS moderno.</small>
+			</div>
+		</footer>
+
+		<script>
+			document.getElementById('year').textContent = new Date().getFullYear();
+		</script>
+	</body>
+</html>
