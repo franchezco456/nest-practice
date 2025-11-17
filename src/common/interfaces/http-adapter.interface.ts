@@ -2,5 +2,5 @@
 
 
 export interface httpAdapter{
-    get<T>(url:string);
+    get<T>(url:string) : Promise<{data:T}>;
 }
