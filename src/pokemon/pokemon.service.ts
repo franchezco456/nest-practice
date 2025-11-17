@@ -78,6 +78,19 @@ export class PokemonService {
     }
   }
 
+  async fillPokemonsWithSeed(pokemons: CreatePokemonDto[]) {
+    try {
+      pokemons.forEach(p => {
+        p.name = p.name.toLowerCase();
+      });
+      await this.pokeModel.deleteMany({});
+      await this.pokeModel.insertMany(pokemons);
+    } catch (error) {
+      this.handleExceptions(error);
+    }
+  }
+
+
   handleExceptions(error: any) {
     if (error.code === 11000) {
         throw new BadRequestException(`Pokemon exist in db ${JSON.stringify(error.keyValue)}`);
